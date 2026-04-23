@@ -1,0 +1,16 @@
+{
+  "name": "solo-forge-marketplace",
+  "owner": {
+    "name": "cjrain-12505614",
+    "email": "cjrain@msn.com",
+    "url": "https://github.com/cjrain-12505614"
+  },
+  "plugins": [
+    {
+      "name": "solo-forge",
+      "source": "./solo-forge-v0.1.1",
+      "description": "범용 1인 개발자 프로젝트 관리 플러그인. 세션 관리, 에이전트 팀 디스패치, 의사결정 추적, 교훈 기록, Phase 로드맵, 산출물 버전 관리, 기능 기획, QA 시나리오 빌더, Figma Make 검증을 지원합니다. CLAUDE.md 계약 기반으로 프로젝트별 설정을 관리하며, 팀 구성은 프로젝트 규모에 따라 유동적으로 운영합니다.",
+      "version": "0.1.1"
+    }
+  ]
+}
