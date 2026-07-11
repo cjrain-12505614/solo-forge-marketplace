@@ -1,0 +1,15 @@
+{
+  "description": "solo-forge plugin hooks — v0.3.0 신설. UserPromptSubmit 1건: 진행 대시보드(solo-progress-dashboard) 발동 판단 환기 (3중 상시 인지의 셋째 다리, SKILL.md §13).",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/progress-dashboard-remind.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
