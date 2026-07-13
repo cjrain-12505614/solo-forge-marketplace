@@ -1,0 +1,41 @@
+{
+  "description": "solo-forge plugin hooks. UserPromptSubmit: 진행 대시보드 환기 + 프로젝트 규칙 주입. PreToolUse: 파괴적 SQL 차단(exit 2). PostToolUse: .md 링크 무결성 검출.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/progress-dashboard-remind.sh"
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/solo-force-rules-inject.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/solo-db-guard.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/solo-link-integrity-check.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
